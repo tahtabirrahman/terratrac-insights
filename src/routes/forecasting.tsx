@@ -260,7 +260,7 @@ function Forecasting() {
               revisited.
             </p>
           </div>
-          <div>
+          <div className="min-w-0">
             <div className="label-caps mb-2">Demand restored by SKU x DC</div>
             <div className="overflow-x-auto">
             <table className="w-full min-w-[420px] text-sm">
