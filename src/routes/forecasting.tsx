@@ -232,8 +232,8 @@ function Forecasting() {
         title="Handling the stockout-censored weeks (weeks 40-45, Asia Pacific DCs)"
         hint="Trackline Manufacturing supply disruption affecting all five Undercarriage SKUs at Chennai and Jakarta"
       >
-        <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
-          <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+          <div className="min-w-0 space-y-3 text-sm leading-relaxed text-muted-foreground">
             <p>
               During weeks 40-45 the two Asia Pacific DCs were out of stock on Undercarriage parts.
               The recorded <span className="font-medium text-foreground">Units_Sold</span> for those
@@ -260,9 +260,11 @@ function Forecasting() {
               revisited.
             </p>
           </div>
-          <div>
+          <div className="min-w-0">
             <div className="label-caps mb-2">Demand restored by SKU x DC</div>
-            <table className="w-full text-sm">
+            <div className="overflow-x-auto">
+            <table className="w-full min-w-[420px] text-sm">
+
               <thead>
                 <tr className="label-caps border-b border-border text-left">
                   <th className="py-1.5 font-semibold">SKU</th>
@@ -291,6 +293,8 @@ function Forecasting() {
                 ))}
               </tbody>
             </table>
+            </div>
+
           </div>
         </div>
       </Panel>
@@ -301,7 +305,9 @@ function Forecasting() {
         hint="WMAPE weights errors by volume, so it is not distorted by low-volume weeks the way MAPE is."
         bodyClassName="p-0"
       >
-        <table className="w-full text-sm">
+        <div className="overflow-x-auto">
+        <table className="w-full min-w-[900px] text-sm">
+
           <thead>
             <tr className="label-caps border-b border-border text-left">
               <th className="px-5 py-2 font-semibold">SKU</th>
@@ -354,6 +360,8 @@ function Forecasting() {
             </tr>
           </tbody>
         </table>
+        </div>
+
       </Panel>
     </>
   );

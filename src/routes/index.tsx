@@ -107,7 +107,9 @@ function Overview() {
           className="lg:col-span-2"
           bodyClassName="p-0"
         >
-          <table className="w-full text-sm">
+          <div className="overflow-x-auto">
+          <table className="w-full min-w-[640px] text-sm">
+
             <thead>
               <tr className="label-caps border-b border-border text-left">
                 <th className="px-5 py-2 font-semibold">Supplier</th>
@@ -133,6 +135,8 @@ function Overview() {
               ))}
             </tbody>
           </table>
+          </div>
+
         </Panel>
       </div>
 
@@ -152,7 +156,9 @@ function Overview() {
         hint="Five SKUs spanning three ABC classes and four categories"
         bodyClassName="p-0"
       >
-        <table className="w-full text-sm">
+        <div className="overflow-x-auto">
+        <table className="w-full min-w-[760px] text-sm">
+
           <thead>
             <tr className="label-caps border-b border-border text-left">
               <th className="px-5 py-2 font-semibold">SKU</th>
@@ -180,6 +186,8 @@ function Overview() {
             ))}
           </tbody>
         </table>
+        </div>
+
       </Panel>
 
       <div className="mt-6 flex flex-wrap gap-3">
