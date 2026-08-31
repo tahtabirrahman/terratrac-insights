@@ -87,8 +87,9 @@ function SupplyPlanning() {
         {[
           { id: "ALL", label: "All statuses" },
           { id: "critical", label: "Critical" },
-          { id: "stockout_risk", label: "Stockout risk" },
+          { id: "stockout_risk", label: "Reorder due" },
           { id: "healthy", label: "Healthy" },
+          { id: "overstock", label: "Overstocked" },
         ].map((o) => (
           <button
             key={o.id}
