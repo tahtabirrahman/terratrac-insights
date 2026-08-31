@@ -297,7 +297,7 @@ function SupplierRisk() {
               <div>
                 <div className="font-medium">Correct the supplier master and put OTIF on the QBR</div>
                 <p className="text-muted-foreground">
-                  Measured OTIF is 20-30 points below the stated figures for every supplier, so
+                  Measured on-time-in-full is 12-31 points below the stated figures for every supplier, so
                   planning parameters derived from the master are optimistic. Replace them with
                   rolling 12-month actuals and review monthly.
                 </p>
