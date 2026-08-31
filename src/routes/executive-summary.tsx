@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { data, usd } from "@/lib/dash";
-import { PageHeader, Panel } from "@/components/dash";
+import { PageHeader, Panel, TableWrap } from "@/components/dash";
 
 export const Route = createFileRoute("/executive-summary")({
   head: () => ({

@@ -14,7 +14,7 @@ import {
   ZAxis,
 } from "recharts";
 import { data } from "@/lib/dash";
-import { PageHeader, Panel, Pill } from "@/components/dash";
+import { PageHeader, Panel, Pill, TableWrap } from "@/components/dash";
 
 export const Route = createFileRoute("/supplier-risk")({
   head: () => ({

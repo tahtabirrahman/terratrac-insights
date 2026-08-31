@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { data, usd, num } from "@/lib/dash";
-import { Kpi, PageHeader, Panel, Pill } from "@/components/dash";
+import { Kpi, PageHeader, Panel, Pill, TableWrap } from "@/components/dash";
 
 export const Route = createFileRoute("/")({
   head: () => ({
