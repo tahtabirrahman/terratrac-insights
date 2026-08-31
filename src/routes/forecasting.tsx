@@ -232,8 +232,8 @@ function Forecasting() {
         title="Handling the stockout-censored weeks (weeks 40-45, Asia Pacific DCs)"
         hint="Trackline Manufacturing supply disruption affecting all five Undercarriage SKUs at Chennai and Jakarta"
       >
-        <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
-          <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+          <div className="min-w-0 space-y-3 text-sm leading-relaxed text-muted-foreground">
             <p>
               During weeks 40-45 the two Asia Pacific DCs were out of stock on Undercarriage parts.
               The recorded <span className="font-medium text-foreground">Units_Sold</span> for those
