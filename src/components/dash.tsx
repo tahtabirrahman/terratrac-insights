@@ -10,15 +10,30 @@ export function PageHeader({
   subtitle?: string;
 }) {
   return (
-    <header className="mb-6 border-b border-border pb-5">
+    <header className="mb-5 border-b border-border pb-4 sm:mb-6 sm:pb-5">
       <div className="label-caps text-teal">{eyebrow}</div>
-      <h1 className="mt-1.5 text-2xl font-semibold text-foreground">{title}</h1>
+      <h1 className="mt-1.5 text-lg font-semibold text-foreground sm:text-2xl">{title}</h1>
       {subtitle ? (
-        <p className="mt-1.5 max-w-3xl text-sm text-muted-foreground">{subtitle}</p>
+        <p className="mt-1.5 max-w-3xl text-[13px] text-muted-foreground sm:text-sm">{subtitle}</p>
       ) : null}
     </header>
   );
 }
+
+export function TableWrap({
+  children,
+  minWidth = 640,
+}: {
+  children: ReactNode;
+  minWidth?: number;
+}) {
+  return (
+    <div className="w-full max-w-full overflow-x-auto">
+      <div style={{ minWidth }}>{children}</div>
+    </div>
+  );
+}
+
 
 export function Panel({
   title,
@@ -26,7 +41,7 @@ export function Panel({
   actions,
   children,
   className = "",
-  bodyClassName = "p-5",
+  bodyClassName = "p-4 sm:p-5",
 }: {
   title?: string;
   hint?: string;
@@ -36,10 +51,10 @@ export function Panel({
   bodyClassName?: string;
 }) {
   return (
-    <section className={`panel ${className}`}>
+    <section className={`panel min-w-0 overflow-hidden ${className}`}>
       {title ? (
-        <div className="flex items-start justify-between gap-4 border-b border-border px-5 py-3">
-          <div>
+        <div className="flex flex-wrap items-start justify-between gap-3 border-b border-border px-4 py-3 sm:px-5">
+          <div className="min-w-0">
             <h2 className="text-sm font-semibold text-foreground">{title}</h2>
             {hint ? <p className="mt-0.5 text-xs text-muted-foreground">{hint}</p> : null}
           </div>
@@ -47,6 +62,7 @@ export function Panel({
         </div>
       ) : null}
       <div className={bodyClassName}>{children}</div>
+
     </section>
   );
 }
@@ -71,11 +87,14 @@ export function Kpi({
           ? "text-warn"
           : "text-foreground";
   return (
-    <div className="panel px-5 py-4">
+    <div className="panel min-w-0 px-4 py-3.5 sm:px-5 sm:py-4">
       <div className="label-caps">{label}</div>
-      <div className={`tabular mt-2 text-2xl font-semibold ${toneCls}`}>{value}</div>
+      <div className={`tabular mt-1.5 text-xl font-semibold break-words sm:mt-2 sm:text-2xl ${toneCls}`}>
+        {value}
+      </div>
       {delta ? <div className="mt-1 text-xs text-muted-foreground">{delta}</div> : null}
     </div>
+
   );
 }
 

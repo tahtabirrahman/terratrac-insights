@@ -12,7 +12,7 @@ import {
   YAxis,
 } from "recharts";
 import { data, num } from "@/lib/dash";
-import { PageHeader, Panel, Pill } from "@/components/dash";
+import { PageHeader, Panel, Pill, TableWrap } from "@/components/dash";
 
 export const Route = createFileRoute("/forecasting")({
   head: () => ({
@@ -262,35 +262,37 @@ function Forecasting() {
           </div>
           <div>
             <div className="label-caps mb-2">Demand restored by SKU x DC</div>
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="label-caps border-b border-border text-left">
-                  <th className="py-1.5 font-semibold">SKU</th>
-                  <th className="py-1.5 font-semibold">DC</th>
-                  <th className="py-1.5 text-right font-semibold">Observed</th>
-                  <th className="py-1.5 text-right font-semibold">Restored</th>
-                  <th className="py-1.5 text-right font-semibold">Uplift</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.censoring.map((c) => (
-                  <tr
-                    key={c.sku + c.warehouse}
-                    className={`border-b border-border/60 last:border-0 ${
-                      c.sku === s.sku ? "bg-accent/50" : ""
-                    }`}
-                  >
-                    <td className="tabular py-1.5">{c.sku}</td>
-                    <td className="tabular py-1.5 text-muted-foreground">{c.warehouse}</td>
-                    <td className="tabular py-1.5 text-right">{c.observed}</td>
-                    <td className="tabular py-1.5 text-right">{c.restored}</td>
-                    <td className="tabular py-1.5 text-right text-warn">
-                      +{Math.round(((c.restored - c.observed) / c.observed) * 100)}%
-                    </td>
+            <TableWrap minWidth={460}>
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="label-caps border-b border-border text-left">
+                    <th className="py-1.5 font-semibold">SKU</th>
+                    <th className="py-1.5 font-semibold">DC</th>
+                    <th className="py-1.5 text-right font-semibold">Observed</th>
+                    <th className="py-1.5 text-right font-semibold">Restored</th>
+                    <th className="py-1.5 text-right font-semibold">Uplift</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {data.censoring.map((c) => (
+                    <tr
+                      key={c.sku + c.warehouse}
+                      className={`border-b border-border/60 last:border-0 ${
+                        c.sku === s.sku ? "bg-accent/50" : ""
+                      }`}
+                    >
+                      <td className="tabular py-1.5">{c.sku}</td>
+                      <td className="tabular py-1.5 text-muted-foreground">{c.warehouse}</td>
+                      <td className="tabular py-1.5 text-right">{c.observed}</td>
+                      <td className="tabular py-1.5 text-right">{c.restored}</td>
+                      <td className="tabular py-1.5 text-right text-warn">
+                        +{Math.round(((c.restored - c.observed) / c.observed) * 100)}%
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </TableWrap>
           </div>
         </div>
       </Panel>
@@ -301,59 +303,61 @@ function Forecasting() {
         hint="WMAPE weights errors by volume, so it is not distorted by low-volume weeks the way MAPE is."
         bodyClassName="p-0"
       >
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="label-caps border-b border-border text-left">
-              <th className="px-5 py-2 font-semibold">SKU</th>
-              <th className="px-3 py-2 font-semibold">Product</th>
-              <th className="px-3 py-2 font-semibold">ABC</th>
-              <th className="px-3 py-2 text-right font-semibold">Actual (units)</th>
-              <th className="px-3 py-2 text-right font-semibold">Forecast (units)</th>
-              <th className="px-3 py-2 text-right font-semibold">WMAPE</th>
-              <th className="px-3 py-2 text-right font-semibold">Bias</th>
-              <th className="px-5 py-2 text-right font-semibold">Naive WMAPE</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.accuracy.map((a) => (
-              <tr key={a.sku} className="border-b border-border/60">
-                <td className="tabular px-5 py-2.5">{a.sku}</td>
-                <td className="px-3 py-2.5 font-medium">{a.name}</td>
-                <td className="px-3 py-2.5">
-                  <Pill className="border-border bg-secondary text-secondary-foreground">
-                    {a.abc}
-                  </Pill>
+        <TableWrap minWidth={900}>
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="label-caps border-b border-border text-left">
+                <th className="px-5 py-2 font-semibold">SKU</th>
+                <th className="px-3 py-2 font-semibold">Product</th>
+                <th className="px-3 py-2 font-semibold">ABC</th>
+                <th className="px-3 py-2 text-right font-semibold">Actual (units)</th>
+                <th className="px-3 py-2 text-right font-semibold">Forecast (units)</th>
+                <th className="px-3 py-2 text-right font-semibold">WMAPE</th>
+                <th className="px-3 py-2 text-right font-semibold">Bias</th>
+                <th className="px-5 py-2 text-right font-semibold">Naive WMAPE</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.accuracy.map((a) => (
+                <tr key={a.sku} className="border-b border-border/60">
+                  <td className="tabular px-5 py-2.5">{a.sku}</td>
+                  <td className="px-3 py-2.5 font-medium">{a.name}</td>
+                  <td className="px-3 py-2.5">
+                    <Pill className="border-border bg-secondary text-secondary-foreground">
+                      {a.abc}
+                    </Pill>
+                  </td>
+                  <td className="tabular px-3 py-2.5 text-right">{num(a.holdout_actual)}</td>
+                  <td className="tabular px-3 py-2.5 text-right">{num(a.holdout_forecast)}</td>
+                  <td className="tabular px-3 py-2.5 text-right font-semibold">{a.wmape}%</td>
+                  <td
+                    className={`tabular px-3 py-2.5 text-right ${
+                      Math.abs(a.bias) > 5 ? "text-warn" : "text-muted-foreground"
+                    }`}
+                  >
+                    {a.bias > 0 ? "+" : ""}
+                    {a.bias}%
+                  </td>
+                  <td className="tabular px-5 py-2.5 text-right text-muted-foreground">
+                    {a.naive_wmape}%
+                  </td>
+                </tr>
+              ))}
+              <tr className="bg-secondary/60">
+                <td className="px-5 py-2.5 font-semibold" colSpan={5}>
+                  Portfolio average
                 </td>
-                <td className="tabular px-3 py-2.5 text-right">{num(a.holdout_actual)}</td>
-                <td className="tabular px-3 py-2.5 text-right">{num(a.holdout_forecast)}</td>
-                <td className="tabular px-3 py-2.5 text-right font-semibold">{a.wmape}%</td>
-                <td
-                  className={`tabular px-3 py-2.5 text-right ${
-                    Math.abs(a.bias) > 5 ? "text-warn" : "text-muted-foreground"
-                  }`}
-                >
-                  {a.bias > 0 ? "+" : ""}
-                  {a.bias}%
+                <td className="tabular px-3 py-2.5 text-right font-semibold">
+                  {data.totals.wmape_avg}%
                 </td>
-                <td className="tabular px-5 py-2.5 text-right text-muted-foreground">
-                  {a.naive_wmape}%
+                <td className="px-3 py-2.5" />
+                <td className="tabular px-5 py-2.5 text-right font-semibold text-muted-foreground">
+                  {data.totals.naive_avg}%
                 </td>
               </tr>
-            ))}
-            <tr className="bg-secondary/60">
-              <td className="px-5 py-2.5 font-semibold" colSpan={5}>
-                Portfolio average
-              </td>
-              <td className="tabular px-3 py-2.5 text-right font-semibold">
-                {data.totals.wmape_avg}%
-              </td>
-              <td className="px-3 py-2.5" />
-              <td className="tabular px-5 py-2.5 text-right font-semibold text-muted-foreground">
-                {data.totals.naive_avg}%
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            </tbody>
+          </table>
+        </TableWrap>
       </Panel>
     </>
   );

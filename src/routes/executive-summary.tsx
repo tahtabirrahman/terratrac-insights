@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { data, usd } from "@/lib/dash";
-import { PageHeader, Panel } from "@/components/dash";
+import { PageHeader, Panel, TableWrap } from "@/components/dash";
 
 export const Route = createFileRoute("/executive-summary")({
   head: () => ({
@@ -110,7 +110,7 @@ function ExecutiveSummary() {
         subtitle="TerraTrac Equipment Parts — demand forecasting and supply planning review. Scope: 7 planned SKUs across 3 ABC classes and 4 categories, 4 distribution centers, 5 suppliers, 104 weeks of sell-through and 220 purchase orders."
       />
 
-      <Panel className="border-l-4 border-l-navy" bodyClassName="px-6 py-5">
+      <Panel className="border-l-4 border-l-navy" bodyClassName="px-4 py-4 sm:px-6 sm:py-5">
         <div className="label-caps">The headline</div>
         <p className="mt-2 max-w-4xl text-[15px] leading-relaxed">
           Demand is predictable to within{" "}
@@ -131,9 +131,10 @@ function ExecutiveSummary() {
       <div className="mt-5 grid gap-5 lg:grid-cols-2">
         {takeaways.map((t) => (
           <Panel key={t.n} className={`border-l-4 ${toneCls[t.tone]}`}>
-            <div className="flex items-start justify-between gap-5">
-              <div>
+            <div className="flex items-start justify-between gap-3 sm:gap-5">
+              <div className="min-w-0">
                 <div className="tabular label-caps">{t.n}</div>
+
                 <h3 className="mt-1 text-sm font-semibold">{t.title}</h3>
               </div>
               <div className="shrink-0 text-right">
@@ -151,42 +152,44 @@ function ExecutiveSummary() {
       </div>
 
       <Panel className="mt-5" title="Recommended actions" bodyClassName="p-0">
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="label-caps border-b border-border text-left">
-              <th className="px-5 py-2 font-semibold">Action</th>
-              <th className="px-3 py-2 font-semibold">Owner</th>
-              <th className="px-5 py-2 font-semibold">Timing</th>
-            </tr>
-          </thead>
-          <tbody>
-            {actions.map((a) => (
-              <tr key={a.action} className="border-b border-border/60 last:border-0">
-                <td className="px-5 py-3">
-                  <div className="flex gap-3">
-                    <span
-                      className={`mt-1 h-2 w-2 shrink-0 rounded-full ${
-                        a.tone === "risk"
-                          ? "bg-risk"
-                          : a.tone === "good"
-                            ? "bg-good"
-                            : a.tone === "warn"
-                              ? "bg-warn"
-                              : "bg-info"
-                      }`}
-                    />
-                    <div>
-                      <div className="font-medium">{a.action}</div>
-                      <p className="mt-0.5 text-xs text-muted-foreground">{a.detail}</p>
-                    </div>
-                  </div>
-                </td>
-                <td className="px-3 py-3 align-top text-muted-foreground">{a.owner}</td>
-                <td className="px-5 py-3 align-top font-medium">{a.when}</td>
+        <TableWrap minWidth={620}>
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="label-caps border-b border-border text-left">
+                <th className="px-5 py-2 font-semibold">Action</th>
+                <th className="px-3 py-2 font-semibold">Owner</th>
+                <th className="px-5 py-2 font-semibold">Timing</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {actions.map((a) => (
+                <tr key={a.action} className="border-b border-border/60 last:border-0">
+                  <td className="px-5 py-3">
+                    <div className="flex gap-3">
+                      <span
+                        className={`mt-1 h-2 w-2 shrink-0 rounded-full ${
+                          a.tone === "risk"
+                            ? "bg-risk"
+                            : a.tone === "good"
+                              ? "bg-good"
+                              : a.tone === "warn"
+                                ? "bg-warn"
+                                : "bg-info"
+                        }`}
+                      />
+                      <div>
+                        <div className="font-medium">{a.action}</div>
+                        <p className="mt-0.5 text-xs text-muted-foreground">{a.detail}</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-3 py-3 align-top text-muted-foreground">{a.owner}</td>
+                  <td className="px-5 py-3 align-top font-medium">{a.when}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </TableWrap>
       </Panel>
 
       <div className="mt-5 grid gap-5 lg:grid-cols-3">
