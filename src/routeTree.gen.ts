@@ -10,11 +10,19 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ExecutiveSummaryRouteImport } from './routes/executive-summary'
 import { Route as ForecastingRouteImport } from './routes/forecasting'
+import { Route as SupplierRiskRouteImport } from './routes/supplier-risk'
+import { Route as SupplyPlanningRouteImport } from './routes/supply-planning'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExecutiveSummaryRoute = ExecutiveSummaryRouteImport.update({
+  id: '/executive-summary',
+  path: '/executive-summary',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ForecastingRoute = ForecastingRouteImport.update({
@@ -22,31 +30,69 @@ const ForecastingRoute = ForecastingRouteImport.update({
   path: '/forecasting',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SupplierRiskRoute = SupplierRiskRouteImport.update({
+  id: '/supplier-risk',
+  path: '/supplier-risk',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SupplyPlanningRoute = SupplyPlanningRouteImport.update({
+  id: '/supply-planning',
+  path: '/supply-planning',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/executive-summary': typeof ExecutiveSummaryRoute
   '/forecasting': typeof ForecastingRoute
+  '/supplier-risk': typeof SupplierRiskRoute
+  '/supply-planning': typeof SupplyPlanningRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/executive-summary': typeof ExecutiveSummaryRoute
   '/forecasting': typeof ForecastingRoute
+  '/supplier-risk': typeof SupplierRiskRoute
+  '/supply-planning': typeof SupplyPlanningRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/executive-summary': typeof ExecutiveSummaryRoute
   '/forecasting': typeof ForecastingRoute
+  '/supplier-risk': typeof SupplierRiskRoute
+  '/supply-planning': typeof SupplyPlanningRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/forecasting'
+  fullPaths:
+    | '/'
+    | '/executive-summary'
+    | '/forecasting'
+    | '/supplier-risk'
+    | '/supply-planning'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/forecasting'
-  id: '__root__' | '/' | '/forecasting'
+  to:
+    | '/'
+    | '/executive-summary'
+    | '/forecasting'
+    | '/supplier-risk'
+    | '/supply-planning'
+  id:
+    | '__root__'
+    | '/'
+    | '/executive-summary'
+    | '/forecasting'
+    | '/supplier-risk'
+    | '/supply-planning'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ExecutiveSummaryRoute: typeof ExecutiveSummaryRoute
   ForecastingRoute: typeof ForecastingRoute
+  SupplierRiskRoute: typeof SupplierRiskRoute
+  SupplyPlanningRoute: typeof SupplyPlanningRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -58,6 +104,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/executive-summary': {
+      id: '/executive-summary'
+      path: '/executive-summary'
+      fullPath: '/executive-summary'
+      preLoaderRoute: typeof ExecutiveSummaryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/forecasting': {
       id: '/forecasting'
       path: '/forecasting'
@@ -65,12 +118,29 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ForecastingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/supplier-risk': {
+      id: '/supplier-risk'
+      path: '/supplier-risk'
+      fullPath: '/supplier-risk'
+      preLoaderRoute: typeof SupplierRiskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/supply-planning': {
+      id: '/supply-planning'
+      path: '/supply-planning'
+      fullPath: '/supply-planning'
+      preLoaderRoute: typeof SupplyPlanningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ExecutiveSummaryRoute: ExecutiveSummaryRoute,
   ForecastingRoute: ForecastingRoute,
+  SupplierRiskRoute: SupplierRiskRoute,
+  SupplyPlanningRoute: SupplyPlanningRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
