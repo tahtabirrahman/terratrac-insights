@@ -63,6 +63,9 @@ export type Supplier = {
   p95_lt: number;
   pos: number;
   otif_actual: number;
+  avg_delay: number;
+  max_delay: number;
+  risk_score: number;
 };
 
 export const data = raw as unknown as {
@@ -92,6 +95,11 @@ export const data = raw as unknown as {
     skus_total: number;
     rows: number;
     weeks: number;
+    pos: number;
+    planned_skus: number;
+    plan_rows: number;
+    holdout_weeks: number;
+    censored_uplift_pct: number;
     critical: number;
     at_risk: number;
     overstock: number;
