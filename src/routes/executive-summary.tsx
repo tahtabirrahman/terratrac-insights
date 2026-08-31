@@ -51,7 +51,7 @@ const takeaways = [
     n: "04",
     title: "History must be corrected before it is trusted",
     body: "Six stockout weeks across five Undercarriage SKUs at two DCs understate true demand by 60-130%. Left uncorrected, the forecast lowers safety stock precisely on the least reliable supplier — compounding the exposure rather than covering it.",
-    metric: "+96%",
+    metric: "+133%",
     metricLabel: "avg demand restored, weeks 40-45",
     tone: "info" as const,
   },
