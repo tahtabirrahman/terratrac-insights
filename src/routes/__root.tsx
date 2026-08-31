@@ -130,18 +130,16 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen overflow-x-hidden bg-background">
+      <div className="min-h-screen bg-background">
         <div className="sticky top-0 z-30 bg-navy text-navy-foreground">
-          <div className="mx-auto flex max-w-[1400px] items-center gap-3 px-4 py-2.5 sm:gap-4 sm:px-6 sm:py-3">
-            <div className="flex min-w-0 items-center gap-2.5">
-              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded bg-teal text-[13px] font-bold text-teal-foreground">
+          <div className="mx-auto flex max-w-[1400px] items-center gap-4 px-6 py-3">
+            <div className="flex items-center gap-2.5">
+              <div className="flex h-7 w-7 items-center justify-center rounded bg-teal text-[13px] font-bold text-teal-foreground">
                 TT
               </div>
-              <div className="min-w-0 leading-tight">
-                <div className="truncate text-[13px] font-semibold sm:text-sm">
-                  TerraTrac Equipment Parts
-                </div>
-                <div className="truncate text-[10px] text-navy-foreground/60 sm:text-[11px]">
+              <div className="leading-tight">
+                <div className="text-sm font-semibold">TerraTrac Equipment Parts</div>
+                <div className="text-[11px] text-navy-foreground/60">
                   Demand Forecasting &amp; Supply Planning
                 </div>
               </div>
@@ -151,13 +149,13 @@ function RootComponent() {
             </div>
           </div>
           <nav className="border-t border-white/10">
-            <div className="mx-auto flex max-w-[1400px] gap-1 overflow-x-auto px-2 sm:px-4 [-ms-overflow-style:none] [scrollbar-width:none]">
+            <div className="mx-auto flex max-w-[1400px] gap-1 overflow-x-auto px-4">
               {NAV.map((n) => (
                 <Link
                   key={n.to}
                   to={n.to}
                   activeOptions={{ exact: n.to === "/" }}
-                  className="whitespace-nowrap border-b-2 border-transparent px-2.5 py-2.5 text-xs font-medium text-navy-foreground/65 transition-colors hover:text-navy-foreground sm:px-3 sm:text-[13px]"
+                  className="whitespace-nowrap border-b-2 border-transparent px-3 py-2.5 text-[13px] font-medium text-navy-foreground/65 transition-colors hover:text-navy-foreground"
                   activeProps={{ className: "!border-teal !text-navy-foreground" }}
                 >
                   {n.label}
@@ -166,14 +164,13 @@ function RootComponent() {
             </div>
           </nav>
         </div>
-        <main className="mx-auto max-w-[1400px] px-3 py-5 sm:px-6 sm:py-7">
+        <main className="mx-auto max-w-[1400px] px-6 py-7">
           <Outlet />
         </main>
-        <footer className="mx-auto max-w-[1400px] px-3 pb-10 text-[11px] text-muted-foreground sm:px-6">
+        <footer className="mx-auto max-w-[1400px] px-6 pb-10 text-[11px] text-muted-foreground">
           Synthetic case-study data · 25 SKUs · 4 DCs · 5 suppliers · 104 weeks of weekly
           sell-through
         </footer>
-
       </div>
     </QueryClientProvider>
   );
