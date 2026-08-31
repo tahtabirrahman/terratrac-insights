@@ -55,7 +55,7 @@ function ChartTooltip({ active, payload, label }: any) {
 }
 
 function Forecasting() {
-  const [sel, setSel] = useState(data.series[0].sku);
+  const [sel, setSel] = useState(data.series[0]!.sku);
   const s = data.series.find((x) => x.sku === sel)!;
   const chart = s.points.map((p) => ({
     ...p,
