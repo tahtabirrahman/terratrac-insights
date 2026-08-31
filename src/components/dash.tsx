@@ -87,11 +87,14 @@ export function Kpi({
           ? "text-warn"
           : "text-foreground";
   return (
-    <div className="panel px-5 py-4">
+    <div className="panel min-w-0 px-4 py-3.5 sm:px-5 sm:py-4">
       <div className="label-caps">{label}</div>
-      <div className={`tabular mt-2 text-2xl font-semibold ${toneCls}`}>{value}</div>
+      <div className={`tabular mt-1.5 text-xl font-semibold break-words sm:mt-2 sm:text-2xl ${toneCls}`}>
+        {value}
+      </div>
       {delta ? <div className="mt-1 text-xs text-muted-foreground">{delta}</div> : null}
     </div>
+
   );
 }
 
