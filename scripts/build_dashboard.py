@@ -98,7 +98,7 @@ for sku in SERIES_SKUS:
             }
         )
 
-    trend = beta[1] * 52 / base * 100
+    trend = beta[1] / base * 100
     seas_curve = np.column_stack([X[:, 2 + k] for k in range(6)]) @ beta[2:8]
     seas = (seas_curve.max() - seas_curve.min()) / 2 / base * 100
     promo_lift = beta[8] / base * 100
@@ -127,9 +127,17 @@ for sku in SERIES_SKUS:
     wmape = float((a.WMAPE_pct * w).sum() / w.sum())
     bias = float((a.Bias_pct * w).sum() / w.sum())
 
+    # naive 52-week moving-average baseline, measured per DC on the same
+    # 8-week holdout and rolled up with the same demand weights
+    nv, nw = [], []
+    for whid, dw in d.groupby("Warehouse_ID"):
+        dw = dw.sort_values("week_num")
+        pred = dw.adjusted.rolling(52).mean().shift(1).tail(HOLDOUT)
+        act = dw.adjusted.tail(HOLDOUT)
+        nv.append(float((pred.values - act.values).__abs__().sum() / act.sum() * 100))
+        nw.append(float(ss.loc[(ss.SKU_ID == sku) & (ss.Warehouse_ID == whid), "Avg_Weekly_Demand"].iloc[0]))
+    naive = float(np.average(nv, weights=nw))
     hold = g.tail(HOLDOUT)
-    naive_pred = g.adjusted.rolling(52).mean().shift(1).tail(HOLDOUT)
-    naive = float((naive_pred - hold.adjusted).abs().sum() / hold.adjusted.sum() * 100)
     ha = float(hold.adjusted.sum())
     accuracy.append(
         {
@@ -243,7 +251,7 @@ suppliers.sort(key=lambda s: -s["risk_score"])
 
 counts = {k: sum(1 for r in plan if r["status"] == k) for k in STATUS.values()}
 out = {
-    "generated": pd.Timestamp.utcnow().strftime("%Y-%m-%d"),
+    "generated": pd.Timestamp.now('UTC').strftime("%Y-%m-%d"),
     "skus": SERIES_SKUS,
     "warehouses": warehouse.to_dict("records"),
     "suppliers": suppliers,
