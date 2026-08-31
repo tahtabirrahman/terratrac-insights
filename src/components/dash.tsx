@@ -10,15 +10,30 @@ export function PageHeader({
   subtitle?: string;
 }) {
   return (
-    <header className="mb-6 border-b border-border pb-5">
+    <header className="mb-5 border-b border-border pb-4 sm:mb-6 sm:pb-5">
       <div className="label-caps text-teal">{eyebrow}</div>
-      <h1 className="mt-1.5 text-2xl font-semibold text-foreground">{title}</h1>
+      <h1 className="mt-1.5 text-lg font-semibold text-foreground sm:text-2xl">{title}</h1>
       {subtitle ? (
-        <p className="mt-1.5 max-w-3xl text-sm text-muted-foreground">{subtitle}</p>
+        <p className="mt-1.5 max-w-3xl text-[13px] text-muted-foreground sm:text-sm">{subtitle}</p>
       ) : null}
     </header>
   );
 }
+
+export function TableWrap({
+  children,
+  minWidth = 640,
+}: {
+  children: ReactNode;
+  minWidth?: number;
+}) {
+  return (
+    <div className="w-full max-w-full overflow-x-auto">
+      <div style={{ minWidth }}>{children}</div>
+    </div>
+  );
+}
+
 
 export function Panel({
   title,
