@@ -68,7 +68,7 @@ function Forecasting() {
       <PageHeader
         eyebrow="Part 1"
         title="Demand Forecasting"
-        subtitle="Method: weekly demand modelled as linear trend + 3-harmonic Fourier annual seasonality + promotion dummy, fitted by least squares per SKU across all four DCs. Chosen over a plain moving average because every SKU shows both a persistent trend and a stable 52-week cycle, and over ARIMA because the seasonal signal is deterministic and the promotion effect needs an explicit regressor. Holdout: last 12 weeks of history (weeks 93-104)."
+        subtitle="Method: weekly demand modelled as linear trend + 3-harmonic Fourier annual seasonality + promotion dummy, fitted by least squares per SKU across all four DCs. Chosen over a plain moving average because every SKU shows both a persistent trend and a stable 52-week cycle, and over ARIMA because the seasonal signal is deterministic and the promotion effect needs an explicit regressor. Holdout: last 8 weeks of history (weeks 97-104), scored per SKU x DC and rolled up on demand weights."
       />
 
       <div className="mb-5 flex flex-wrap gap-2">
@@ -112,7 +112,7 @@ function Forecasting() {
               />
               <Tooltip content={<ChartTooltip />} />
               <ReferenceArea
-                x1={93}
+                x1={97}
                 x2={104}
                 fill="var(--color-warn)"
                 fillOpacity={0.08}
@@ -246,16 +246,18 @@ function Forecasting() {
               <span className="font-medium text-foreground">Decision: correct the history rather
               than drop it.</span> Dropping six consecutive weeks would punch a hole in the seasonal
               signal at the same point in the annual cycle. Instead each censored SKU x DC week is
-              replaced with the maximum of the observed sale and the seasonal-median demand for that
-              SKU/DC computed from all uncensored weeks in the comparable window — i.e. observed
-              sales are treated as a lower bound on true demand. The regression is then fitted on
-              the restored series.
+              rebuilt from the same SKU's demand at the two unaffected DCs over the same weeks,
+              normalised to each DC's own pre-disruption baseline (weeks 34-39) and re-scaled to the
+              censored DC's baseline. Promotions and seasonality are shared across DCs while the
+              outage is warehouse-specific, so the unaffected DCs carry the signal for what demand
+              would have been. The regression is then fitted on the restored series.
             </p>
             <p>
               A stricter alternative is a censored (Tobit-style) likelihood that models the
-              stockout flag explicitly. At six weeks out of 104 the median-restoration approach
-              gives near-identical fitted parameters at a fraction of the complexity, so it was
-              preferred; the stockout flag is retained in the data so the choice can be revisited.
+              stockout flag explicitly. At six weeks out of 104 the cross-DC index gives
+              near-identical fitted parameters at a fraction of the complexity, so it was preferred;
+              the original Units_Sold and the stockout flag are both retained so the choice can be
+              revisited.
             </p>
           </div>
           <div>
@@ -295,7 +297,7 @@ function Forecasting() {
 
       <Panel
         className="mt-5"
-        title="Forecast accuracy — 12-week holdout (weeks 93-104)"
+        title="Forecast accuracy — 8-week holdout (weeks 97-104)"
         hint="WMAPE weights errors by volume, so it is not distorted by low-volume weeks the way MAPE is."
         bodyClassName="p-0"
       >

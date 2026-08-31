@@ -265,6 +265,7 @@ out = {
         "weeks": 104,
         "pos": int(sup.POs.sum()),
         "planned_skus": int(ss.SKU_ID.nunique()),
+        "plan_rows": len(plan),
         "critical": counts["critical"],
         "at_risk": counts["stockout_risk"],
         "overstock": counts["overstock"],

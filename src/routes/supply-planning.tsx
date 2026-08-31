@@ -206,7 +206,7 @@ function SupplyPlanning() {
             <p>
               <span className="font-medium text-foreground">The network is structurally under-covered.</span>{" "}
               Across the five reviewed SKUs, cover runs 4-26 days against replenishment lead times
-              of 17-33 days. {data.totals.critical} of 20 positions cannot survive a single lead
+              of 17-33 days. {data.totals.critical} of {data.totals.plan_rows} positions cannot survive a single lead
               time even with on-order stock counted, so the exposure is not a forecasting artefact —
               it is a policy gap.
             </p>
