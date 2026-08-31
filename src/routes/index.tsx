@@ -107,32 +107,34 @@ function Overview() {
           className="lg:col-span-2"
           bodyClassName="p-0"
         >
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="label-caps border-b border-border text-left">
-                <th className="px-5 py-2 font-semibold">Supplier</th>
-                <th className="px-3 py-2 font-semibold">Category</th>
-                <th className="px-3 py-2 text-right font-semibold">Lead time</th>
-                <th className="px-3 py-2 text-right font-semibold">σ</th>
-                <th className="px-5 py-2 text-right font-semibold">OTIF</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.suppliers.map((s) => (
-                <tr key={s.id} className="border-b border-border/60 last:border-0">
-                  <td className="px-5 py-2.5 font-medium">{s.name}</td>
-                  <td className="px-3 py-2.5 text-muted-foreground">{s.category}</td>
-                  <td className="tabular px-3 py-2.5 text-right">{s.actual_lt} d</td>
-                  <td className="tabular px-3 py-2.5 text-right text-muted-foreground">
-                    {s.actual_lt_sd} d
-                  </td>
-                  <td className="tabular px-5 py-2.5 text-right">
-                    <span className={s.otif_actual < 70 ? "text-risk" : ""}>{s.otif_actual}%</span>
-                  </td>
+          <TableWrap minWidth={640}>
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="label-caps border-b border-border text-left">
+                  <th className="px-5 py-2 font-semibold">Supplier</th>
+                  <th className="px-3 py-2 font-semibold">Category</th>
+                  <th className="px-3 py-2 text-right font-semibold">Lead time</th>
+                  <th className="px-3 py-2 text-right font-semibold">σ</th>
+                  <th className="px-5 py-2 text-right font-semibold">OTIF</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {data.suppliers.map((s) => (
+                  <tr key={s.id} className="border-b border-border/60 last:border-0">
+                    <td className="px-5 py-2.5 font-medium">{s.name}</td>
+                    <td className="px-3 py-2.5 text-muted-foreground">{s.category}</td>
+                    <td className="tabular px-3 py-2.5 text-right">{s.actual_lt} d</td>
+                    <td className="tabular px-3 py-2.5 text-right text-muted-foreground">
+                      {s.actual_lt_sd} d
+                    </td>
+                    <td className="tabular px-5 py-2.5 text-right">
+                      <span className={s.otif_actual < 70 ? "text-risk" : ""}>{s.otif_actual}%</span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </TableWrap>
         </Panel>
       </div>
 
@@ -152,34 +154,36 @@ function Overview() {
         hint="Five SKUs spanning three ABC classes and four categories"
         bodyClassName="p-0"
       >
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="label-caps border-b border-border text-left">
-              <th className="px-5 py-2 font-semibold">SKU</th>
-              <th className="px-3 py-2 font-semibold">Product</th>
-              <th className="px-3 py-2 font-semibold">Category</th>
-              <th className="px-3 py-2 font-semibold">ABC</th>
-              <th className="px-3 py-2 text-right font-semibold">Avg weekly</th>
-              <th className="px-5 py-2 text-right font-semibold">12-wk forecast avg</th>
-            </tr>
-          </thead>
-          <tbody>
-            {skus.map((s) => (
-              <tr key={s.sku} className="border-b border-border/60 last:border-0">
-                <td className="tabular px-5 py-2.5">{s.sku}</td>
-                <td className="px-3 py-2.5 font-medium">{s.name}</td>
-                <td className="px-3 py-2.5 text-muted-foreground">{s.category}</td>
-                <td className="px-3 py-2.5">
-                  <Pill className="border-border bg-secondary text-secondary-foreground">
-                    {s.abc}
-                  </Pill>
-                </td>
-                <td className="tabular px-3 py-2.5 text-right">{s.avg_weekly}</td>
-                <td className="tabular px-5 py-2.5 text-right">{s.forecast_avg}</td>
+        <TableWrap minWidth={700}>
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="label-caps border-b border-border text-left">
+                <th className="px-5 py-2 font-semibold">SKU</th>
+                <th className="px-3 py-2 font-semibold">Product</th>
+                <th className="px-3 py-2 font-semibold">Category</th>
+                <th className="px-3 py-2 font-semibold">ABC</th>
+                <th className="px-3 py-2 text-right font-semibold">Avg weekly</th>
+                <th className="px-5 py-2 text-right font-semibold">12-wk forecast avg</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {skus.map((s) => (
+                <tr key={s.sku} className="border-b border-border/60 last:border-0">
+                  <td className="tabular px-5 py-2.5">{s.sku}</td>
+                  <td className="px-3 py-2.5 font-medium">{s.name}</td>
+                  <td className="px-3 py-2.5 text-muted-foreground">{s.category}</td>
+                  <td className="px-3 py-2.5">
+                    <Pill className="border-border bg-secondary text-secondary-foreground">
+                      {s.abc}
+                    </Pill>
+                  </td>
+                  <td className="tabular px-3 py-2.5 text-right">{s.avg_weekly}</td>
+                  <td className="tabular px-5 py-2.5 text-right">{s.forecast_avg}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </TableWrap>
       </Panel>
 
       <div className="mt-6 flex flex-wrap gap-3">

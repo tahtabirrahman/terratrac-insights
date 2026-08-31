@@ -151,42 +151,44 @@ function ExecutiveSummary() {
       </div>
 
       <Panel className="mt-5" title="Recommended actions" bodyClassName="p-0">
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="label-caps border-b border-border text-left">
-              <th className="px-5 py-2 font-semibold">Action</th>
-              <th className="px-3 py-2 font-semibold">Owner</th>
-              <th className="px-5 py-2 font-semibold">Timing</th>
-            </tr>
-          </thead>
-          <tbody>
-            {actions.map((a) => (
-              <tr key={a.action} className="border-b border-border/60 last:border-0">
-                <td className="px-5 py-3">
-                  <div className="flex gap-3">
-                    <span
-                      className={`mt-1 h-2 w-2 shrink-0 rounded-full ${
-                        a.tone === "risk"
-                          ? "bg-risk"
-                          : a.tone === "good"
-                            ? "bg-good"
-                            : a.tone === "warn"
-                              ? "bg-warn"
-                              : "bg-info"
-                      }`}
-                    />
-                    <div>
-                      <div className="font-medium">{a.action}</div>
-                      <p className="mt-0.5 text-xs text-muted-foreground">{a.detail}</p>
-                    </div>
-                  </div>
-                </td>
-                <td className="px-3 py-3 align-top text-muted-foreground">{a.owner}</td>
-                <td className="px-5 py-3 align-top font-medium">{a.when}</td>
+        <TableWrap minWidth={620}>
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="label-caps border-b border-border text-left">
+                <th className="px-5 py-2 font-semibold">Action</th>
+                <th className="px-3 py-2 font-semibold">Owner</th>
+                <th className="px-5 py-2 font-semibold">Timing</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {actions.map((a) => (
+                <tr key={a.action} className="border-b border-border/60 last:border-0">
+                  <td className="px-5 py-3">
+                    <div className="flex gap-3">
+                      <span
+                        className={`mt-1 h-2 w-2 shrink-0 rounded-full ${
+                          a.tone === "risk"
+                            ? "bg-risk"
+                            : a.tone === "good"
+                              ? "bg-good"
+                              : a.tone === "warn"
+                                ? "bg-warn"
+                                : "bg-info"
+                        }`}
+                      />
+                      <div>
+                        <div className="font-medium">{a.action}</div>
+                        <p className="mt-0.5 text-xs text-muted-foreground">{a.detail}</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-3 py-3 align-top text-muted-foreground">{a.owner}</td>
+                  <td className="px-5 py-3 align-top font-medium">{a.when}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </TableWrap>
       </Panel>
 
       <div className="mt-5 grid gap-5 lg:grid-cols-3">
