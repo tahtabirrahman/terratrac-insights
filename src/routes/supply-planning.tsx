@@ -20,7 +20,7 @@ export const Route = createFileRoute("/supply-planning")({
       },
     ],
   }),
-  component: SupplyPlanning;
+  component: SupplyPlanning,
 });
 
 function SupplyPlanning() {
