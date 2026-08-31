@@ -41,7 +41,7 @@ export function Panel({
   actions,
   children,
   className = "",
-  bodyClassName = "p-5",
+  bodyClassName = "p-4 sm:p-5",
 }: {
   title?: string;
   hint?: string;
@@ -51,10 +51,10 @@ export function Panel({
   bodyClassName?: string;
 }) {
   return (
-    <section className={`panel ${className}`}>
+    <section className={`panel min-w-0 overflow-hidden ${className}`}>
       {title ? (
-        <div className="flex items-start justify-between gap-4 border-b border-border px-5 py-3">
-          <div>
+        <div className="flex flex-wrap items-start justify-between gap-3 border-b border-border px-4 py-3 sm:px-5">
+          <div className="min-w-0">
             <h2 className="text-sm font-semibold text-foreground">{title}</h2>
             {hint ? <p className="mt-0.5 text-xs text-muted-foreground">{hint}</p> : null}
           </div>
@@ -62,6 +62,7 @@ export function Panel({
         </div>
       ) : null}
       <div className={bodyClassName}>{children}</div>
+
     </section>
   );
 }
