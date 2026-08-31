@@ -26,16 +26,16 @@ const takeaways = [
   {
     n: "01",
     title: "Demand is forecastable — the current planning basis is not using it",
-    body: `A trend + seasonality + promotion model delivers ${data.totals.wmape_avg}% WMAPE on a blind 12-week holdout, against ${data.totals.naive_avg}% for the moving-average approach it replaces. Cutting error by more than half is worth roughly two weeks of buffer inventory across the portfolio.`,
+    body: `A trend + seasonality + promotion model delivers ${data.totals.wmape_avg}% WMAPE per SKU x DC on a blind ${data.totals.holdout_weeks}-week holdout, against ${data.totals.naive_avg}% for the moving-average approach it replaces — and, unlike the moving average, it prices in promotions and the annual cycle instead of chasing them a quarter late.`,
     metric: `${data.totals.wmape_avg}%`,
-    metricLabel: "WMAPE, 12-wk holdout",
+    metricLabel: `WMAPE, ${data.totals.holdout_weeks}-wk holdout`,
     tone: "good" as const,
   },
   {
     n: "02",
     title: "Coverage is below policy almost everywhere",
-    body: `${data.totals.at_risk} of 20 reviewed SKU x DC positions are below reorder point and ${data.totals.critical} cannot cover a single replenishment lead time. Cover runs 4-26 days against lead times of 17-33 days, so a normal supplier slip becomes a customer-facing stockout.`,
-    metric: `${data.totals.at_risk}/20`,
+    body: `${data.totals.at_risk + data.totals.critical} of ${data.totals.plan_rows} reviewed SKU x DC positions are below reorder point and ${data.totals.critical} cannot cover a single replenishment lead time. Cover runs days, not weeks, against lead times of 14-33 days, so a normal supplier slip becomes a customer-facing stockout.`,
+    metric: `${data.totals.at_risk + data.totals.critical}/${data.totals.plan_rows}`,
     metricLabel: "positions below ROP",
     tone: "risk" as const,
   },
@@ -50,8 +50,8 @@ const takeaways = [
   {
     n: "04",
     title: "History must be corrected before it is trusted",
-    body: "Six stockout weeks across five Undercarriage SKUs at two DCs understate true demand by 60-130%. Left uncorrected, the forecast lowers safety stock precisely on the least reliable supplier — compounding the exposure rather than covering it.",
-    metric: "+133%",
+    body: "Six stockout weeks across five Undercarriage SKUs at two DCs understate true demand by roughly 100-200%. Left uncorrected, the forecast lowers safety stock precisely on the least reliable supplier — compounding the exposure rather than covering it.",
+    metric: `+${data.totals.censored_uplift_pct}%`,
     metricLabel: "avg demand restored, weeks 40-45",
     tone: "info" as const,
   },
@@ -60,7 +60,7 @@ const takeaways = [
 const actions = [
   {
     action: "Release the catch-up replenishment plan",
-    detail: `${usd(data.totals.buy_value)} across 5 SKUs x 4 DCs, MOQ and pack size respected. Expedite the ${data.totals.critical} critical positions.`,
+    detail: `${usd(data.totals.buy_value)} across ${data.totals.planned_skus} SKUs x 4 DCs, MOQ and pack size respected. Expedite the ${data.totals.critical} critical positions.`,
     owner: "Planning",
     when: "This week",
     tone: "risk",
@@ -107,7 +107,7 @@ function ExecutiveSummary() {
       <PageHeader
         eyebrow="Part 3 · for supply chain leadership"
         title="Executive Summary"
-        subtitle="TerraTrac Equipment Parts — demand forecasting and supply planning review. Scope: 5 SKUs across 3 ABC classes and 4 categories, 4 distribution centers, 5 suppliers, 104 weeks of sell-through and 220 purchase orders."
+        subtitle="TerraTrac Equipment Parts — demand forecasting and supply planning review. Scope: 7 planned SKUs across 3 ABC classes and 4 categories, 4 distribution centers, 5 suppliers, 104 weeks of sell-through and 220 purchase orders."
       />
 
       <Panel className="border-l-4 border-l-navy" bodyClassName="px-6 py-5">
@@ -117,7 +117,7 @@ function ExecutiveSummary() {
           <span className="font-semibold">{data.totals.wmape_avg}% weighted error</span>, but
           inventory is not positioned to serve it:{" "}
           <span className="font-semibold text-risk">
-            {data.totals.at_risk} of 20 SKU x DC positions sit below reorder point
+            {data.totals.at_risk + data.totals.critical} of {data.totals.plan_rows} SKU x DC positions sit below reorder point
           </span>{" "}
           and {data.totals.critical} cannot cover one supplier lead time. The exposure is
           concentrated in Undercarriage, sourced single-vendor from the slowest and least reliable
@@ -194,7 +194,7 @@ function ExecutiveSummary() {
           <p className="text-sm leading-relaxed text-muted-foreground">
             Weekly demand per SKU modelled as linear trend + 3-harmonic annual Fourier seasonality +
             promotion dummy, fitted by least squares on censoring-corrected history and validated on
-            a blind 12-week holdout. Reorder points combine lead-time demand with a 95%
+            a blind 8-week holdout. Reorder points combine lead-time demand with a 95%
             service-level safety stock that accounts for both demand and lead-time variability,
             using lead times measured from 220 actual purchase orders rather than supplier master
             data.

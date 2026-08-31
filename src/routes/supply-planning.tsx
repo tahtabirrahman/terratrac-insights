@@ -53,14 +53,14 @@ function SupplyPlanning() {
         />
         <Kpi
           label="Below reorder point"
-          value={`${data.totals.at_risk} / 20`}
+          value={`${data.totals.at_risk + data.totals.critical} / ${data.totals.plan_rows}`}
           delta="action required this cycle"
           tone="warn"
         />
         <Kpi
           label="Healthy / overstocked"
           value={`${data.totals.healthy} / ${data.totals.overstock}`}
-          delta="no position carries excess cover"
+          delta="1 healthy · 1 overstocked position"
         />
         <Kpi label="Recommended buy (filtered)" value={usd(buy)} delta="at standard unit cost" />
       </div>
@@ -87,8 +87,9 @@ function SupplyPlanning() {
         {[
           { id: "ALL", label: "All statuses" },
           { id: "critical", label: "Critical" },
-          { id: "stockout_risk", label: "Stockout risk" },
+          { id: "stockout_risk", label: "Reorder due" },
           { id: "healthy", label: "Healthy" },
+          { id: "overstock", label: "Overstocked" },
         ].map((o) => (
           <button
             key={o.id}
@@ -206,7 +207,7 @@ function SupplyPlanning() {
             <p>
               <span className="font-medium text-foreground">The network is structurally under-covered.</span>{" "}
               Across the five reviewed SKUs, cover runs 4-26 days against replenishment lead times
-              of 17-33 days. {data.totals.critical} of 20 positions cannot survive a single lead
+              of 17-33 days. {data.totals.critical} of {data.totals.plan_rows} positions cannot survive a single lead
               time even with on-order stock counted, so the exposure is not a forecasting artefact —
               it is a policy gap.
             </p>

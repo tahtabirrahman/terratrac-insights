@@ -25,17 +25,17 @@ export const Route = createFileRoute("/")({
 const findings = [
   {
     tag: "Forecast",
-    title: "Seasonal + promo regression beats the naive baseline by half",
-    body: `A trend + Fourier-seasonality + promotion regression averages ${data.totals.wmape_avg}% WMAPE on a 12-week holdout, versus ${data.totals.naive_avg}% for a 52-week moving average. Every reviewed SKU shows a clear annual cycle and a measurable promotion lift.`,
+    title: "Seasonal + promo regression is the better planning basis",
+    body: `A trend + Fourier-seasonality + promotion regression averages ${data.totals.wmape_avg}% WMAPE per SKU x DC on a blind ${data.totals.holdout_weeks}-week holdout, versus ${data.totals.naive_avg}% for a 52-week moving average, and it removes the systematic under-forecast the moving average carries into promotion weeks. Every reviewed SKU shows a clear annual cycle and a measurable promotion lift.`,
   },
   {
     tag: "Data quality",
     title: "Undercarriage demand in weeks 40-45 is censored, not soft",
-    body: "The six-week supply disruption at Chennai and Jakarta suppressed observed sell-through for all five Undercarriage SKUs. Uncorrected, it drags the forecast down and understates safety stock for the least reliable supplier in the network.",
+    body: `The weeks 40-45 supply disruption at Chennai and Jakarta suppressed observed sell-through for all five Undercarriage SKUs by an average of ${data.totals.censored_uplift_pct}%. Uncorrected, it drags the forecast down and understates safety stock for the least reliable supplier in the network.`,
   },
   {
     tag: "Inventory",
-    title: `${data.totals.at_risk} of 20 SKU x DC positions sit below reorder point`,
+    title: `${data.totals.at_risk + data.totals.critical} of ${data.totals.plan_rows} SKU x DC positions sit below reorder point`,
     body: `Network-wide cover is 1-3 weeks against supplier lead times of 2-5 weeks. ${data.totals.critical} positions cannot even cover a single replenishment lead time; ${usd(data.totals.buy_value)} of buys are recommended this cycle.`,
   },
   {
@@ -64,7 +64,7 @@ function Overview() {
         />
         <Kpi
           label="Positions below reorder point"
-          value={`${data.totals.at_risk} / 20`}
+          value={`${data.totals.at_risk + data.totals.critical} / ${data.totals.plan_rows}`}
           delta={`${data.totals.critical} cannot cover one lead time`}
           tone="risk"
         />
