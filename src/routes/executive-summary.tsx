@@ -131,12 +131,12 @@ function ExecutiveSummary() {
       <div className="mt-5 grid gap-5 lg:grid-cols-2">
         {takeaways.map((t) => (
           <Panel key={t.n} className={`border-l-4 ${toneCls[t.tone]}`}>
-            <div className="flex items-start justify-between gap-5">
-              <div>
+            <div className="flex flex-wrap items-start justify-between gap-3 sm:gap-5">
+              <div className="min-w-0">
                 <div className="tabular label-caps">{t.n}</div>
                 <h3 className="mt-1 text-sm font-semibold">{t.title}</h3>
               </div>
-              <div className="shrink-0 text-right">
+              <div className="shrink-0 text-left sm:text-right">
                 <div className={`tabular text-xl font-semibold ${metricCls[t.tone]}`}>
                   {t.metric}
                 </div>
@@ -151,7 +151,9 @@ function ExecutiveSummary() {
       </div>
 
       <Panel className="mt-5" title="Recommended actions" bodyClassName="p-0">
-        <table className="w-full text-sm">
+        <div className="overflow-x-auto">
+        <table className="w-full min-w-[640px] text-sm">
+
           <thead>
             <tr className="label-caps border-b border-border text-left">
               <th className="px-5 py-2 font-semibold">Action</th>
@@ -187,6 +189,8 @@ function ExecutiveSummary() {
             ))}
           </tbody>
         </table>
+        </div>
+
       </Panel>
 
       <div className="mt-5 grid gap-5 lg:grid-cols-3">
