@@ -53,14 +53,14 @@ function SupplyPlanning() {
         />
         <Kpi
           label="Below reorder point"
-          value={`${data.totals.at_risk} / 20`}
+          value={`${data.totals.at_risk + data.totals.critical} / ${data.totals.plan_rows}`}
           delta="action required this cycle"
           tone="warn"
         />
         <Kpi
           label="Healthy / overstocked"
           value={`${data.totals.healthy} / ${data.totals.overstock}`}
-          delta="no position carries excess cover"
+          delta="1 healthy · 1 overstocked position"
         />
         <Kpi label="Recommended buy (filtered)" value={usd(buy)} delta="at standard unit cost" />
       </div>

@@ -64,7 +64,7 @@ function Overview() {
         />
         <Kpi
           label="Positions below reorder point"
-          value={`${data.totals.at_risk} / 20`}
+          value={`${data.totals.at_risk + data.totals.critical} / ${data.totals.plan_rows}`}
           delta={`${data.totals.critical} cannot cover one lead time`}
           tone="risk"
         />
