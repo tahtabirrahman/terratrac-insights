@@ -131,9 +131,10 @@ function ExecutiveSummary() {
       <div className="mt-5 grid gap-5 lg:grid-cols-2">
         {takeaways.map((t) => (
           <Panel key={t.n} className={`border-l-4 ${toneCls[t.tone]}`}>
-            <div className="flex items-start justify-between gap-5">
-              <div>
+            <div className="flex items-start justify-between gap-3 sm:gap-5">
+              <div className="min-w-0">
                 <div className="tabular label-caps">{t.n}</div>
+
                 <h3 className="mt-1 text-sm font-semibold">{t.title}</h3>
               </div>
               <div className="shrink-0 text-right">
