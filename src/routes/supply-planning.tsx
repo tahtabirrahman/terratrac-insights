@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { data, num, statusMeta, usd, type PlanRow } from "@/lib/dash";
-import { Kpi, PageHeader, Panel, Pill, TableWrap } from "@/components/dash";
+import { Kpi, PageHeader, Panel, Pill } from "@/components/dash";
 
 export const Route = createFileRoute("/supply-planning")({
   head: () => ({

@@ -110,7 +110,7 @@ function ExecutiveSummary() {
         subtitle="TerraTrac Equipment Parts — demand forecasting and supply planning review. Scope: 7 planned SKUs across 3 ABC classes and 4 categories, 4 distribution centers, 5 suppliers, 104 weeks of sell-through and 220 purchase orders."
       />
 
-      <Panel className="border-l-4 border-l-navy" bodyClassName="px-6 py-5">
+      <Panel className="border-l-4 border-l-navy" bodyClassName="px-4 py-4 sm:px-6 sm:py-5">
         <div className="label-caps">The headline</div>
         <p className="mt-2 max-w-4xl text-[15px] leading-relaxed">
           Demand is predictable to within{" "}
