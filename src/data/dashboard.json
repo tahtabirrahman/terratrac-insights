@@ -1,5 +1,5 @@
 {
-"generated": "2026-08-31",
+"generated": "2026-09-07",
 "skus": [
 "SKU-005",
 "SKU-009",
@@ -50,10 +50,10 @@
 "actual_lt_sd": 10.0,
 "p95_lt": 50,
 "pos": 43,
-"otif_actual": 70.0,
+"otif_actual": 65.1,
 "avg_delay": -1.6,
 "max_delay": 20,
-"risk_score": 87.5
+"risk_score": 91.8
 },
 {
 "id": "SUP-01",
@@ -67,7 +67,7 @@
 "actual_lt_sd": 3.7,
 "p95_lt": 26,
 "pos": 48,
-"otif_actual": 60.0,
+"otif_actual": 58.3,
 "avg_delay": -0.6,
 "max_delay": 9,
 "risk_score": 68.5
@@ -84,27 +84,10 @@
 "actual_lt_sd": 5.4,
 "p95_lt": 35,
 "pos": 50,
-"otif_actual": 70.0,
+"otif_actual": 66.0,
 "avg_delay": -2.0,
 "max_delay": 9,
-"risk_score": 64.5
-},
-{
-"id": "SUP-02",
-"name": "Vantage Engine Systems",
-"region": "North America",
-"category": "Engine & Powertrain",
-"master_lt": 18,
-"master_sd": 3,
-"otif_master": 95,
-"actual_lt": 17.3,
-"actual_lt_sd": 2.4,
-"p95_lt": 21,
-"pos": 38,
-"otif_actual": 70.0,
-"avg_delay": -0.7,
-"max_delay": 5,
-"risk_score": 49.5
+"risk_score": 67.8
 },
 {
 "id": "SUP-05",
@@ -118,10 +101,27 @@
 "actual_lt_sd": 1.7,
 "p95_lt": 16,
 "pos": 41,
-"otif_actual": 70.0,
+"otif_actual": 68.3,
 "avg_delay": -0.3,
 "max_delay": 4,
-"risk_score": 46.0
+"risk_score": 46.5
+},
+{
+"id": "SUP-02",
+"name": "Vantage Engine Systems",
+"region": "North America",
+"category": "Engine & Powertrain",
+"master_lt": 18,
+"master_sd": 3,
+"otif_master": 95,
+"actual_lt": 17.3,
+"actual_lt_sd": 2.4,
+"p95_lt": 21,
+"pos": 38,
+"otif_actual": 73.7,
+"avg_delay": -0.7,
+"max_delay": 5,
+"risk_score": 43.5
 }
 ],
 "series": [
@@ -1198,7 +1198,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 274.8,
+"forecast": 274.9,
 "promo": 0,
 "censored": false
 },
@@ -1208,7 +1208,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 321.1,
+"forecast": 321.4,
 "promo": 0,
 "censored": false
 },
@@ -1218,7 +1218,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 265.5,
+"forecast": 265.8,
 "promo": 0,
 "censored": false
 },
@@ -1228,7 +1228,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 269.8,
+"forecast": 270.2,
 "promo": 0,
 "censored": false
 },
@@ -1238,7 +1238,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 262.2,
+"forecast": 262.5,
 "promo": 0,
 "censored": false
 },
@@ -1248,7 +1248,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 255.6,
+"forecast": 256.0,
 "promo": 0,
 "censored": false
 },
@@ -1258,7 +1258,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 276.9,
+"forecast": 277.3,
 "promo": 0,
 "censored": false
 },
@@ -1268,7 +1268,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 252.7,
+"forecast": 253.1,
 "promo": 0,
 "censored": false
 },
@@ -1278,7 +1278,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 206.1,
+"forecast": 206.5,
 "promo": 0,
 "censored": false
 },
@@ -1288,7 +1288,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 275.0,
+"forecast": 275.3,
 "promo": 0,
 "censored": false
 }
@@ -1297,7 +1297,7 @@
 "seasonal_amp_pct": 14.8,
 "promo_lift_pct": 58.1,
 "avg_weekly": 248.6,
-"forecast_avg": 268.8
+"forecast_avg": 269.1
 },
 {
 "sku": "SKU-009",
@@ -2352,7 +2352,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 433.8,
+"forecast": 425.5,
 "promo": 0,
 "censored": false
 },
@@ -2362,7 +2362,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 303.8,
+"forecast": 295.3,
 "promo": 0,
 "censored": false
 },
@@ -2372,7 +2372,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 288.3,
+"forecast": 279.6,
 "promo": 0,
 "censored": false
 },
@@ -2382,7 +2382,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 438.0,
+"forecast": 429.0,
 "promo": 0,
 "censored": false
 },
@@ -2392,7 +2392,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 346.6,
+"forecast": 337.4,
 "promo": 0,
 "censored": false
 },
@@ -2402,7 +2402,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 380.3,
+"forecast": 371.0,
 "promo": 0,
 "censored": false
 },
@@ -2412,7 +2412,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 363.9,
+"forecast": 354.4,
 "promo": 0,
 "censored": false
 },
@@ -2422,7 +2422,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 345.4,
+"forecast": 335.7,
 "promo": 0,
 "censored": false
 },
@@ -2432,7 +2432,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 436.1,
+"forecast": 426.4,
 "promo": 0,
 "censored": false
 },
@@ -2442,7 +2442,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 377.0,
+"forecast": 367.2,
 "promo": 0,
 "censored": false
 },
@@ -2452,7 +2452,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 394.5,
+"forecast": 384.7,
 "promo": 0,
 "censored": false
 },
@@ -2462,7 +2462,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 422.1,
+"forecast": 412.2,
 "promo": 0,
 "censored": false
 }
@@ -2471,7 +2471,7 @@
 "seasonal_amp_pct": 20.2,
 "promo_lift_pct": 48.6,
 "avg_weekly": 360.4,
-"forecast_avg": 377.5
+"forecast_avg": 368.2
 },
 {
 "sku": "SKU-018",
@@ -3526,7 +3526,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 471.3,
+"forecast": 487.7,
 "promo": 0,
 "censored": false
 },
@@ -3536,7 +3536,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 339.4,
+"forecast": 363.7,
 "promo": 0,
 "censored": false
 },
@@ -3546,7 +3546,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 376.7,
+"forecast": 389.3,
 "promo": 0,
 "censored": false
 },
@@ -3556,7 +3556,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 540.2,
+"forecast": 538.8,
 "promo": 0,
 "censored": false
 },
@@ -3566,7 +3566,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 393.6,
+"forecast": 405.5,
 "promo": 0,
 "censored": false
 },
@@ -3576,7 +3576,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 405.4,
+"forecast": 427.1,
 "promo": 0,
 "censored": false
 },
@@ -3586,7 +3586,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 388.6,
+"forecast": 406.8,
 "promo": 0,
 "censored": false
 },
@@ -3596,7 +3596,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 476.7,
+"forecast": 486.9,
 "promo": 0,
 "censored": false
 },
@@ -3606,7 +3606,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 616.8,
+"forecast": 622.1,
 "promo": 0,
 "censored": false
 },
@@ -3616,7 +3616,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 426.3,
+"forecast": 431.2,
 "promo": 0,
 "censored": false
 },
@@ -3626,7 +3626,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 470.3,
+"forecast": 475.7,
 "promo": 0,
 "censored": false
 },
@@ -3636,7 +3636,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 471.7,
+"forecast": 477.5,
 "promo": 0,
 "censored": false
 }
@@ -3645,7 +3645,7 @@
 "seasonal_amp_pct": 27.1,
 "promo_lift_pct": 49.6,
 "avg_weekly": 413.3,
-"forecast_avg": 448.1
+"forecast_avg": 459.4
 },
 {
 "sku": "SKU-011",
@@ -3659,7 +3659,7 @@
 "date": "2024-01-01",
 "actual": 209.0,
 "adjusted": 209.0,
-"fit": 226.9,
+"fit": 227.5,
 "forecast": null,
 "promo": 1,
 "censored": false
@@ -3669,7 +3669,7 @@
 "date": "2024-01-08",
 "actual": 155.0,
 "adjusted": 155.0,
-"fit": 146.3,
+"fit": 147.1,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3679,7 +3679,7 @@
 "date": "2024-01-15",
 "actual": 142.0,
 "adjusted": 142.0,
-"fit": 146.5,
+"fit": 146.8,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3689,7 +3689,7 @@
 "date": "2024-01-22",
 "actual": 231.0,
 "adjusted": 231.0,
-"fit": 227.1,
+"fit": 226.3,
 "forecast": null,
 "promo": 1,
 "censored": false
@@ -3699,7 +3699,7 @@
 "date": "2024-01-29",
 "actual": 112.0,
 "adjusted": 112.0,
-"fit": 144.8,
+"fit": 144.7,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3709,7 +3709,7 @@
 "date": "2024-02-05",
 "actual": 143.0,
 "adjusted": 143.0,
-"fit": 142.8,
+"fit": 142.7,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3719,7 +3719,7 @@
 "date": "2024-02-12",
 "actual": 152.0,
 "adjusted": 152.0,
-"fit": 140.0,
+"fit": 140.1,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3729,7 +3729,7 @@
 "date": "2024-02-19",
 "actual": 137.0,
 "adjusted": 137.0,
-"fit": 136.7,
+"fit": 137.1,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3739,7 +3739,7 @@
 "date": "2024-02-26",
 "actual": 204.0,
 "adjusted": 204.0,
-"fit": 214.3,
+"fit": 214.1,
 "forecast": null,
 "promo": 1,
 "censored": false
@@ -3749,7 +3749,7 @@
 "date": "2024-03-04",
 "actual": 158.0,
 "adjusted": 158.0,
-"fit": 129.7,
+"fit": 130.5,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3759,7 +3759,7 @@
 "date": "2024-03-11",
 "actual": 122.0,
 "adjusted": 122.0,
-"fit": 126.6,
+"fit": 127.6,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3769,7 +3769,7 @@
 "date": "2024-03-18",
 "actual": 138.0,
 "adjusted": 138.0,
-"fit": 124.2,
+"fit": 125.3,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3779,7 +3779,7 @@
 "date": "2024-03-25",
 "actual": 121.0,
 "adjusted": 121.0,
-"fit": 122.7,
+"fit": 123.9,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3789,7 +3789,7 @@
 "date": "2024-04-01",
 "actual": 128.0,
 "adjusted": 128.0,
-"fit": 122.4,
+"fit": 123.5,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3799,7 +3799,7 @@
 "date": "2024-04-08",
 "actual": 133.0,
 "adjusted": 133.0,
-"fit": 123.3,
+"fit": 124.2,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3809,7 +3809,7 @@
 "date": "2024-04-15",
 "actual": 111.0,
 "adjusted": 111.0,
-"fit": 125.2,
+"fit": 126.0,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3819,7 +3819,7 @@
 "date": "2024-04-22",
 "actual": 133.0,
 "adjusted": 133.0,
-"fit": 128.2,
+"fit": 128.7,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3829,7 +3829,7 @@
 "date": "2024-04-29",
 "actual": 140.0,
 "adjusted": 140.0,
-"fit": 131.8,
+"fit": 132.2,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3839,7 +3839,7 @@
 "date": "2024-05-06",
 "actual": 152.0,
 "adjusted": 152.0,
-"fit": 135.8,
+"fit": 136.1,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3849,7 +3849,7 @@
 "date": "2024-05-13",
 "actual": 106.0,
 "adjusted": 106.0,
-"fit": 140.0,
+"fit": 140.2,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3859,7 +3859,7 @@
 "date": "2024-05-20",
 "actual": 171.0,
 "adjusted": 171.0,
-"fit": 143.9,
+"fit": 144.2,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3869,7 +3869,7 @@
 "date": "2024-05-27",
 "actual": 151.0,
 "adjusted": 151.0,
-"fit": 147.5,
+"fit": 147.8,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3879,7 +3879,7 @@
 "date": "2024-06-03",
 "actual": 156.0,
 "adjusted": 156.0,
-"fit": 150.4,
+"fit": 151.0,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3889,7 +3889,7 @@
 "date": "2024-06-10",
 "actual": 171.0,
 "adjusted": 171.0,
-"fit": 152.8,
+"fit": 153.5,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3899,7 +3899,7 @@
 "date": "2024-06-17",
 "actual": 250.0,
 "adjusted": 250.0,
-"fit": 235.6,
+"fit": 235.8,
 "forecast": null,
 "promo": 1,
 "censored": false
@@ -3909,7 +3909,7 @@
 "date": "2024-06-24",
 "actual": 240.0,
 "adjusted": 240.0,
-"fit": 236.9,
+"fit": 237.3,
 "forecast": null,
 "promo": 1,
 "censored": false
@@ -3919,7 +3919,7 @@
 "date": "2024-07-01",
 "actual": 141.0,
 "adjusted": 141.0,
-"fit": 156.8,
+"fit": 158.1,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3929,7 +3929,7 @@
 "date": "2024-07-08",
 "actual": 144.0,
 "adjusted": 144.0,
-"fit": 157.8,
+"fit": 159.1,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3939,7 +3939,7 @@
 "date": "2024-07-15",
 "actual": 165.0,
 "adjusted": 165.0,
-"fit": 158.9,
+"fit": 160.1,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3949,7 +3949,7 @@
 "date": "2024-07-22",
 "actual": 161.0,
 "adjusted": 161.0,
-"fit": 160.4,
+"fit": 161.3,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3959,7 +3959,7 @@
 "date": "2024-07-29",
 "actual": 165.0,
 "adjusted": 165.0,
-"fit": 162.2,
+"fit": 162.9,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3969,7 +3969,7 @@
 "date": "2024-08-05",
 "actual": 173.0,
 "adjusted": 173.0,
-"fit": 164.6,
+"fit": 164.9,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3979,7 +3979,7 @@
 "date": "2024-08-12",
 "actual": 132.0,
 "adjusted": 132.0,
-"fit": 167.2,
+"fit": 167.3,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3989,7 +3989,7 @@
 "date": "2024-08-19",
 "actual": 205.0,
 "adjusted": 205.0,
-"fit": 170.2,
+"fit": 170.0,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -3999,7 +3999,7 @@
 "date": "2024-08-26",
 "actual": 164.0,
 "adjusted": 164.0,
-"fit": 173.1,
+"fit": 172.8,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4009,7 +4009,7 @@
 "date": "2024-09-02",
 "actual": 149.0,
 "adjusted": 149.0,
-"fit": 175.7,
+"fit": 175.5,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4029,7 +4029,7 @@
 "date": "2024-09-16",
 "actual": 333.0,
 "adjusted": 333.0,
-"fit": 260.2,
+"fit": 259.8,
 "forecast": null,
 "promo": 1,
 "censored": false
@@ -4039,7 +4039,7 @@
 "date": "2024-09-23",
 "actual": 193.0,
 "adjusted": 193.0,
-"fit": 179.6,
+"fit": 180.4,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4049,7 +4049,7 @@
 "date": "2024-09-30",
 "actual": 175.0,
 "adjusted": 175.0,
-"fit": 179.0,
+"fit": 180.5,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4059,7 +4059,7 @@
 "date": "2024-10-07",
 "actual": 105.0,
 "adjusted": 175.9,
-"fit": 177.5,
+"fit": 179.6,
 "forecast": null,
 "promo": 0,
 "censored": true
@@ -4069,7 +4069,7 @@
 "date": "2024-10-14",
 "actual": 111.0,
 "adjusted": 164.8,
-"fit": 175.0,
+"fit": 177.9,
 "forecast": null,
 "promo": 0,
 "censored": true
@@ -4079,7 +4079,7 @@
 "date": "2024-10-21",
 "actual": 133.0,
 "adjusted": 198.8,
-"fit": 172.0,
+"fit": 175.5,
 "forecast": null,
 "promo": 0,
 "censored": true
@@ -4089,7 +4089,7 @@
 "date": "2024-10-28",
 "actual": 94.0,
 "adjusted": 125.0,
-"fit": 168.6,
+"fit": 172.6,
 "forecast": null,
 "promo": 0,
 "censored": true
@@ -4099,7 +4099,7 @@
 "date": "2024-11-04",
 "actual": 116.0,
 "adjusted": 146.7,
-"fit": 165.1,
+"fit": 169.4,
 "forecast": null,
 "promo": 0,
 "censored": true
@@ -4108,18 +4108,18 @@
 "week": 46,
 "date": "2024-11-11",
 "actual": 114.0,
-"adjusted": 114.0,
-"fit": 161.9,
+"adjusted": 167.4,
+"fit": 166.3,
 "forecast": null,
 "promo": 0,
-"censored": false
+"censored": true
 },
 {
 "week": 47,
 "date": "2024-11-18",
 "actual": 178.0,
 "adjusted": 178.0,
-"fit": 159.2,
+"fit": 163.4,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4129,7 +4129,7 @@
 "date": "2024-11-25",
 "actual": 144.0,
 "adjusted": 144.0,
-"fit": 157.2,
+"fit": 161.0,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4139,7 +4139,7 @@
 "date": "2024-12-02",
 "actual": 163.0,
 "adjusted": 163.0,
-"fit": 156.0,
+"fit": 159.2,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4149,7 +4149,7 @@
 "date": "2024-12-09",
 "actual": 158.0,
 "adjusted": 158.0,
-"fit": 155.5,
+"fit": 158.0,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4159,7 +4159,7 @@
 "date": "2024-12-16",
 "actual": 161.0,
 "adjusted": 161.0,
-"fit": 155.6,
+"fit": 157.4,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4169,7 +4169,7 @@
 "date": "2024-12-23",
 "actual": 141.0,
 "adjusted": 141.0,
-"fit": 156.2,
+"fit": 157.2,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4179,7 +4179,7 @@
 "date": "2024-12-30",
 "actual": 173.0,
 "adjusted": 173.0,
-"fit": 156.9,
+"fit": 157.2,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4189,7 +4189,7 @@
 "date": "2025-01-06",
 "actual": 170.0,
 "adjusted": 170.0,
-"fit": 157.5,
+"fit": 157.1,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4199,7 +4199,7 @@
 "date": "2025-01-13",
 "actual": 165.0,
 "adjusted": 165.0,
-"fit": 157.7,
+"fit": 156.8,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4209,7 +4209,7 @@
 "date": "2025-01-20",
 "actual": 177.0,
 "adjusted": 177.0,
-"fit": 157.2,
+"fit": 156.1,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4219,7 +4219,7 @@
 "date": "2025-01-27",
 "actual": 143.0,
 "adjusted": 143.0,
-"fit": 156.0,
+"fit": 154.7,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4229,7 +4229,7 @@
 "date": "2025-02-03",
 "actual": 129.0,
 "adjusted": 129.0,
-"fit": 154.0,
+"fit": 152.7,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4239,7 +4239,7 @@
 "date": "2025-02-10",
 "actual": 146.0,
 "adjusted": 146.0,
-"fit": 151.2,
+"fit": 150.1,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4249,7 +4249,7 @@
 "date": "2025-02-17",
 "actual": 153.0,
 "adjusted": 153.0,
-"fit": 147.9,
+"fit": 147.0,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4259,7 +4259,7 @@
 "date": "2025-02-24",
 "actual": 139.0,
 "adjusted": 139.0,
-"fit": 144.3,
+"fit": 143.8,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4269,7 +4269,7 @@
 "date": "2025-03-03",
 "actual": 144.0,
 "adjusted": 144.0,
-"fit": 140.8,
+"fit": 140.5,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4279,7 +4279,7 @@
 "date": "2025-03-10",
 "actual": 128.0,
 "adjusted": 128.0,
-"fit": 137.7,
+"fit": 137.6,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4309,7 +4309,7 @@
 "date": "2025-03-31",
 "actual": 139.0,
 "adjusted": 139.0,
-"fit": 133.6,
+"fit": 133.5,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4319,7 +4319,7 @@
 "date": "2025-04-07",
 "actual": 167.0,
 "adjusted": 167.0,
-"fit": 134.4,
+"fit": 134.2,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4329,7 +4329,7 @@
 "date": "2025-04-14",
 "actual": 104.0,
 "adjusted": 104.0,
-"fit": 136.4,
+"fit": 136.0,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4339,7 +4339,7 @@
 "date": "2025-04-21",
 "actual": 126.0,
 "adjusted": 126.0,
-"fit": 139.3,
+"fit": 138.7,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4349,7 +4349,7 @@
 "date": "2025-04-28",
 "actual": 141.0,
 "adjusted": 141.0,
-"fit": 143.0,
+"fit": 142.2,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4359,7 +4359,7 @@
 "date": "2025-05-05",
 "actual": 244.0,
 "adjusted": 244.0,
-"fit": 228.1,
+"fit": 226.4,
 "forecast": null,
 "promo": 1,
 "censored": false
@@ -4369,7 +4369,7 @@
 "date": "2025-05-12",
 "actual": 158.0,
 "adjusted": 158.0,
-"fit": 151.2,
+"fit": 150.2,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4379,7 +4379,7 @@
 "date": "2025-05-19",
 "actual": 170.0,
 "adjusted": 170.0,
-"fit": 236.2,
+"fit": 234.5,
 "forecast": null,
 "promo": 1,
 "censored": false
@@ -4389,7 +4389,7 @@
 "date": "2025-05-26",
 "actual": 161.0,
 "adjusted": 161.0,
-"fit": 158.6,
+"fit": 157.8,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4399,7 +4399,7 @@
 "date": "2025-06-02",
 "actual": 156.0,
 "adjusted": 156.0,
-"fit": 161.6,
+"fit": 161.0,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4409,7 +4409,7 @@
 "date": "2025-06-09",
 "actual": 173.0,
 "adjusted": 173.0,
-"fit": 163.9,
+"fit": 163.5,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4419,7 +4419,7 @@
 "date": "2025-06-16",
 "actual": 191.0,
 "adjusted": 191.0,
-"fit": 165.7,
+"fit": 165.5,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4439,7 +4439,7 @@
 "date": "2025-06-30",
 "actual": 152.0,
 "adjusted": 152.0,
-"fit": 168.0,
+"fit": 168.1,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4449,7 +4449,7 @@
 "date": "2025-07-07",
 "actual": 161.0,
 "adjusted": 161.0,
-"fit": 169.0,
+"fit": 169.1,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4469,7 +4469,7 @@
 "date": "2025-07-21",
 "actual": 208.0,
 "adjusted": 208.0,
-"fit": 171.5,
+"fit": 171.3,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4479,7 +4479,7 @@
 "date": "2025-07-28",
 "actual": 152.0,
 "adjusted": 152.0,
-"fit": 173.4,
+"fit": 172.9,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4489,7 +4489,7 @@
 "date": "2025-08-04",
 "actual": 189.0,
 "adjusted": 189.0,
-"fit": 175.7,
+"fit": 174.9,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4499,7 +4499,7 @@
 "date": "2025-08-11",
 "actual": 160.0,
 "adjusted": 160.0,
-"fit": 178.4,
+"fit": 177.3,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4509,7 +4509,7 @@
 "date": "2025-08-18",
 "actual": 181.0,
 "adjusted": 181.0,
-"fit": 181.3,
+"fit": 180.0,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4519,7 +4519,7 @@
 "date": "2025-08-25",
 "actual": 161.0,
 "adjusted": 161.0,
-"fit": 184.2,
+"fit": 182.8,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4529,7 +4529,7 @@
 "date": "2025-09-01",
 "actual": 185.0,
 "adjusted": 185.0,
-"fit": 186.9,
+"fit": 185.5,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4539,7 +4539,7 @@
 "date": "2025-09-08",
 "actual": 189.0,
 "adjusted": 189.0,
-"fit": 189.0,
+"fit": 187.8,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4549,7 +4549,7 @@
 "date": "2025-09-15",
 "actual": 195.0,
 "adjusted": 195.0,
-"fit": 190.3,
+"fit": 189.5,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4559,7 +4559,7 @@
 "date": "2025-09-22",
 "actual": 175.0,
 "adjusted": 175.0,
-"fit": 190.8,
+"fit": 190.4,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4569,7 +4569,7 @@
 "date": "2025-09-29",
 "actual": 165.0,
 "adjusted": 165.0,
-"fit": 190.2,
+"fit": 190.5,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4579,7 +4579,7 @@
 "date": "2025-10-06",
 "actual": 206.0,
 "adjusted": 206.0,
-"fit": 188.6,
+"fit": 189.6,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4589,7 +4589,7 @@
 "date": "2025-10-13",
 "actual": 216.0,
 "adjusted": 216.0,
-"fit": 186.2,
+"fit": 187.9,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4599,7 +4599,7 @@
 "date": "2025-10-20",
 "actual": 260.0,
 "adjusted": 260.0,
-"fit": 264.3,
+"fit": 265.8,
 "forecast": null,
 "promo": 1,
 "censored": false
@@ -4609,7 +4609,7 @@
 "date": "2025-10-27",
 "actual": 189.0,
 "adjusted": 189.0,
-"fit": 179.8,
+"fit": 182.6,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4619,7 +4619,7 @@
 "date": "2025-11-03",
 "actual": 246.0,
 "adjusted": 246.0,
-"fit": 257.4,
+"fit": 259.7,
 "forecast": null,
 "promo": 1,
 "censored": false
@@ -4629,7 +4629,7 @@
 "date": "2025-11-10",
 "actual": 204.0,
 "adjusted": 204.0,
-"fit": 173.1,
+"fit": 176.3,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4639,7 +4639,7 @@
 "date": "2025-11-17",
 "actual": 151.0,
 "adjusted": 151.0,
-"fit": 170.4,
+"fit": 173.4,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4649,7 +4649,7 @@
 "date": "2025-11-24",
 "actual": 194.0,
 "adjusted": 194.0,
-"fit": 168.4,
+"fit": 171.0,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4659,7 +4659,7 @@
 "date": "2025-12-01",
 "actual": 188.0,
 "adjusted": 188.0,
-"fit": 167.1,
+"fit": 169.2,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4669,7 +4669,7 @@
 "date": "2025-12-08",
 "actual": 146.0,
 "adjusted": 146.0,
-"fit": 166.7,
+"fit": 168.0,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4679,7 +4679,7 @@
 "date": "2025-12-15",
 "actual": 166.0,
 "adjusted": 166.0,
-"fit": 166.8,
+"fit": 167.4,
 "forecast": null,
 "promo": 0,
 "censored": false
@@ -4689,7 +4689,7 @@
 "date": "2025-12-22",
 "actual": 188.0,
 "adjusted": 188.0,
-"fit": 167.4,
+"fit": 167.2,
 "forecast": 188.0,
 "promo": 0,
 "censored": false
@@ -4700,7 +4700,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 208.6,
+"forecast": 205.9,
 "promo": 0,
 "censored": false
 },
@@ -4710,7 +4710,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 181.0,
+"forecast": 177.6,
 "promo": 0,
 "censored": false
 },
@@ -4720,7 +4720,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 172.2,
+"forecast": 168.9,
 "promo": 0,
 "censored": false
 },
@@ -4730,7 +4730,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 222.6,
+"forecast": 219.6,
 "promo": 0,
 "censored": false
 },
@@ -4740,7 +4740,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 146.2,
+"forecast": 143.3,
 "promo": 0,
 "censored": false
 },
@@ -4750,7 +4750,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 154.8,
+"forecast": 152.1,
 "promo": 0,
 "censored": false
 },
@@ -4760,7 +4760,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 167.8,
+"forecast": 165.3,
 "promo": 0,
 "censored": false
 },
@@ -4770,7 +4770,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 164.2,
+"forecast": 161.5,
 "promo": 0,
 "censored": false
 },
@@ -4780,7 +4780,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 189.8,
+"forecast": 188.2,
 "promo": 0,
 "censored": false
 },
@@ -4790,7 +4790,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 169.4,
+"forecast": 167.8,
 "promo": 0,
 "censored": false
 },
@@ -4800,7 +4800,7 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 143.7,
+"forecast": 141.9,
 "promo": 0,
 "censored": false
 },
@@ -4810,16 +4810,16 @@
 "actual": null,
 "adjusted": null,
 "fit": null,
-"forecast": 154.7,
+"forecast": 153.5,
 "promo": 0,
 "censored": false
 }
 ],
-"trend_pct_yr": 6.7,
-"seasonal_amp_pct": 15.6,
-"promo_lift_pct": 48.9,
-"avg_weekly": 165.7,
-"forecast_avg": 172.9
+"trend_pct_yr": 6.0,
+"seasonal_amp_pct": 15.7,
+"promo_lift_pct": 48.3,
+"avg_weekly": 166.2,
+"forecast_avg": 170.5
 },
 {
 "sku": "SKU-001",
@@ -6001,11 +6001,11 @@
 "sku": "SKU-005",
 "name": "Seal Kit",
 "abc": "A",
-"wmape": 24.3,
-"bias": 4.2,
+"wmape": 24.4,
+"bias": 4.6,
 "naive_wmape": 24.1,
 "holdout_actual": 2470,
-"holdout_forecast": 2575
+"holdout_forecast": 2583
 },
 {
 "sku": "SKU-009",
@@ -6032,10 +6032,10 @@
 "name": "Track Chain",
 "abc": "B",
 "wmape": 19.3,
-"bias": -2.0,
-"naive_wmape": 20.2,
+"bias": -1.7,
+"naive_wmape": 20.1,
 "holdout_actual": 1483,
-"holdout_forecast": 1453
+"holdout_forecast": 1458
 },
 {
 "sku": "SKU-001",
@@ -6052,72 +6052,72 @@
 {
 "sku": "SKU-011",
 "warehouse": "WH-AP1",
-"observed": 103,
-"restored": 270,
-"weeks": 5
+"observed": 123,
+"restored": 327,
+"weeks": 6
 },
 {
 "sku": "SKU-015",
 "warehouse": "WH-AP1",
-"observed": 93,
-"restored": 220,
-"weeks": 5
+"observed": 105,
+"restored": 263,
+"weeks": 6
 },
 {
 "sku": "SKU-011",
 "warehouse": "WH-AP2",
-"observed": 44,
-"restored": 129,
-"weeks": 5
+"observed": 55,
+"restored": 156,
+"weeks": 6
 },
 {
 "sku": "SKU-012",
 "warehouse": "WH-AP1",
-"observed": 34,
-"restored": 112,
-"weeks": 5
+"observed": 41,
+"restored": 135,
+"weeks": 6
 },
 {
 "sku": "SKU-015",
 "warehouse": "WH-AP2",
-"observed": 54,
-"restored": 114,
-"weeks": 5
+"observed": 67,
+"restored": 136,
+"weeks": 6
 },
 {
 "sku": "SKU-013",
 "warehouse": "WH-AP1",
-"observed": 28,
-"restored": 85,
-"weeks": 5
-},
-{
-"sku": "SKU-014",
-"warehouse": "WH-AP1",
-"observed": 17,
-"restored": 53,
-"weeks": 5
+"observed": 37,
+"restored": 100,
+"weeks": 6
 },
 {
 "sku": "SKU-013",
 "warehouse": "WH-AP2",
-"observed": 15,
-"restored": 48,
-"weeks": 5
+"observed": 18,
+"restored": 57,
+"weeks": 6
+},
+{
+"sku": "SKU-014",
+"warehouse": "WH-AP1",
+"observed": 23,
+"restored": 62,
+"weeks": 6
 },
 {
 "sku": "SKU-012",
 "warehouse": "WH-AP2",
-"observed": 21,
-"restored": 47,
-"weeks": 5
+"observed": 25,
+"restored": 56,
+"weeks": 6
 },
 {
 "sku": "SKU-014",
 "warehouse": "WH-AP2",
-"observed": 6,
-"restored": 24,
-"weeks": 5
+"observed": 8,
+"restored": 28,
+"weeks": 6
 }
 ],
 "plan": [
@@ -6176,7 +6176,7 @@
 "region": "Europe",
 "on_hand": 35,
 "on_order": 0,
-"fcst_weekly": 56.9,
+"fcst_weekly": 56.8,
 "safety_stock": 93,
 "rop": 286,
 "dos": 4.0,
@@ -6199,7 +6199,7 @@
 "region": "Asia Pacific",
 "on_hand": 30,
 "on_order": 43,
-"fcst_weekly": 59.1,
+"fcst_weekly": 58.8,
 "safety_stock": 155,
 "rop": 492,
 "dos": 9.0,
@@ -6245,7 +6245,7 @@
 "region": "Asia Pacific",
 "on_hand": 53,
 "on_order": 0,
-"fcst_weekly": 57.5,
+"fcst_weekly": 57.4,
 "safety_stock": 57,
 "rop": 191,
 "dos": 6.0,
@@ -6291,10 +6291,10 @@
 "region": "Asia Pacific",
 "on_hand": 79,
 "on_order": 0,
-"fcst_weekly": 30.6,
+"fcst_weekly": 28.4,
 "safety_stock": 76,
 "rop": 248,
-"dos": 18.0,
+"dos": 19.0,
 "status": "critical",
 "order_qty": 345,
 "timing": "Order now",
@@ -6314,7 +6314,7 @@
 "region": "North America",
 "on_hand": 144,
 "on_order": 47,
-"fcst_weekly": 123.2,
+"fcst_weekly": 124.1,
 "safety_stock": 144,
 "rop": 517,
 "dos": 11.0,
@@ -6337,7 +6337,7 @@
 "region": "Asia Pacific",
 "on_hand": 74,
 "on_order": 0,
-"fcst_weekly": 41.9,
+"fcst_weekly": 43.3,
 "safety_stock": 59,
 "rop": 216,
 "dos": 12.0,
@@ -6360,7 +6360,7 @@
 "region": "Europe",
 "on_hand": 102,
 "on_order": 0,
-"fcst_weekly": 97.9,
+"fcst_weekly": 108.7,
 "safety_stock": 118,
 "rop": 411,
 "dos": 7.0,
@@ -6498,7 +6498,7 @@
 "region": "Asia Pacific",
 "on_hand": 256,
 "on_order": 66,
-"fcst_weekly": 82.5,
+"fcst_weekly": 82.8,
 "safety_stock": 166,
 "rop": 510,
 "dos": 27.0,
@@ -6521,10 +6521,10 @@
 "region": "North America",
 "on_hand": 113,
 "on_order": 121,
-"fcst_weekly": 113.1,
+"fcst_weekly": 104.0,
 "safety_stock": 83,
 "rop": 317,
-"dos": 14.0,
+"dos": 16.0,
 "status": "stockout_risk",
 "order_qty": 320,
 "timing": "Order this cycle",
@@ -6567,7 +6567,7 @@
 "region": "Asia Pacific",
 "on_hand": 86,
 "on_order": 36,
-"fcst_weekly": 36.8,
+"fcst_weekly": 36.9,
 "safety_stock": 59,
 "rop": 202,
 "dos": 23.0,
@@ -6590,7 +6590,7 @@
 "region": "Asia Pacific",
 "on_hand": 284,
 "on_order": 107,
-"fcst_weekly": 154.6,
+"fcst_weekly": 154.3,
 "safety_stock": 180,
 "rop": 633,
 "dos": 18.0,
@@ -6613,10 +6613,10 @@
 "region": "North America",
 "on_hand": 133,
 "on_order": 0,
-"fcst_weekly": 38.2,
+"fcst_weekly": 37.4,
 "safety_stock": 56,
 "rop": 194,
-"dos": 24.0,
+"dos": 25.0,
 "status": "stockout_risk",
 "order_qty": 200,
 "timing": "Order this cycle",
@@ -6779,9 +6779,9 @@
 "healthy": 1,
 "buy_value": 8160900,
 "excess_value": 0,
-"wmape_avg": 23.0,
+"wmape_avg": 23.1,
 "naive_avg": 24.0,
 "holdout_weeks": 8,
-"censored_uplift_pct": 166
+"censored_uplift_pct": 163
 }
 }
