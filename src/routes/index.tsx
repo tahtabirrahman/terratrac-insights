@@ -30,8 +30,8 @@ const findings = [
   },
   {
     tag: "Data quality",
-    title: "Undercarriage demand in weeks 40-45 is censored, not soft",
-    body: `The weeks 40-45 supply disruption at Chennai and Jakarta suppressed observed sell-through for all five Undercarriage SKUs by an average of ${data.totals.censored_uplift_pct}%. Uncorrected, it drags the forecast down and understates safety stock for the least reliable supplier in the network.`,
+    title: "Undercarriage demand in weeks 41-46 is censored, not soft",
+    body: `The weeks 41-46 supply disruption at Chennai and Jakarta suppressed observed sell-through for all five Undercarriage SKUs by an average of ${data.totals.censored_uplift_pct}%. Uncorrected, it drags the forecast down and understates safety stock for the least reliable supplier in the network.`,
   },
   {
     tag: "Inventory",
