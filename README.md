@@ -31,3 +31,7 @@ pip install pandas numpy scipy statsmodels
 python3 scripts/supply_chain_analysis.py     # writes CSVs to ./output
 python3 scripts/build_dashboard.py            # rebuilds src/data/dashboard.json
 ```
+
+## Project Report
+
+[Download the full case study (PDF)](./docs/terratrac-insights_Data_Analytics_Portfolio.pdf)
