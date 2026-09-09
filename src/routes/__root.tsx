@@ -11,6 +11,8 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { DownloadPdfButton } from "../components/download-pdf";
+
 
 const NAV = [
   { to: "/", label: "Overview" },
