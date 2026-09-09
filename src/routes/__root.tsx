@@ -11,6 +11,8 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { DownloadPdfButton } from "../components/download-pdf";
+
 
 const NAV = [
   { to: "/", label: "Overview" },
@@ -149,6 +151,10 @@ function RootComponent() {
             <div className="ml-auto hidden shrink-0 text-[11px] text-navy-foreground/60 lg:block">
               Planning cycle · week of 29 Dec 2025 · service level 95%
             </div>
+            <div className="ml-auto lg:ml-4">
+              <DownloadPdfButton />
+            </div>
+
           </div>
           <nav className="border-t border-white/10">
             <div className="mx-auto flex max-w-[1400px] gap-1 overflow-x-auto px-2 sm:px-4">
