@@ -34,4 +34,4 @@ python3 scripts/build_dashboard.py            # rebuilds src/data/dashboard.json
 
 ## Project Report
 
-[Download the full case study (PDF)](./docs/terratrac-insights_Data_Analytics_Portfolio.pdf)
+Download the full case study (PDF): docs/terratrac-insights_Data_Analytics_Portfolio.pdf
